@@ -1,0 +1,24 @@
+body{
+    background-color: blueviolet;
+    color: white;
+    text-align: center;
+}
+
+h1{
+    color: rgb(225, 196, 52);
+    text-align: center;
+    font-size: 50px;
+}
+
+h2{
+    color: white;
+    font-size: 35px;
+}
+
+#resultado{
+    font-size: 50px;
+}
+
+.container-resultado{
+    padding: 25px;
+}

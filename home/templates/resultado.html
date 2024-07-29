@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Resultado</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'home/css/resultado.css' %}">
+    </head>
+    <body>
+        <h1>MédiaMaster</h1>
+        <h2>Resultado</h2>
+        <div class="container-resultado">
+            <p>A sua média é:</p>
+            <br>
+            <STRONG id="resultado">{{ media_ponderada|floatformat:2 }}</STRONG>
+        </div>
+        <p>Obrigado por utilizar o MédiaMaster!!!</p>
+        <a href="/inicio/" style="color: rgb(225, 196, 52);">Voltar ao início</a>
+    </body>
+</html>

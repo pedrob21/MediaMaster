@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Inserir Notas</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'home/css/notas_pesos.css' %}">
+    </head>
+    <body>
+        <h1>Insira suas notas e seus respectivos pesos</h1>
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
+        <form action="/calcular_media/" method="post">
+            {% csrf_token %}
+            {% for i in quantidade %}
+                <label for="nota{{ i }}">Nota {{ i|add:"1" }}:</label>
+                <input type="number" id="nota{{ i }}" name="nota{{ i }}" step="0.01" required>
+                <label for="peso{{ i }}">Peso {{ i|add:"1" }}:</label>
+                <input type="number" id="peso{{ i }}" name="peso{{ i }}" step="0.01" required>
+                <br>
+                <br>
+            {% endfor %}
+            <button type="submit">Calcular</button>
+        </form>
+    </body>
+</html>

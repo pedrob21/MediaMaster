@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Início</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'home/css/inicio.css' %}">
+    </head>
+    <body>
+        <h1>MédiaMaster</h1>
+        <p>Seja bem-vindo(a)! Aqui no MédiaMaster você poderá calcular a sua média!</p>
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
+        <form action="/inicio/" method="post">
+            {% csrf_token %}
+            <label for="quantidade">Quantas notas deseja inserir?</label>
+            <input type="number" id="quantidade" name="quantidade" min="1" required>
+            <button type="submit">Enviar</button>
+        </form>
+    </body>
+</html>
